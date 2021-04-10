@@ -10,6 +10,9 @@ const App = () => {
         <Route path="/">
           <Home />
         </Route>
+        <Route path="/appointment">
+          
+        </Route>
       </Switch>
     </BrowserRouter>
   );
