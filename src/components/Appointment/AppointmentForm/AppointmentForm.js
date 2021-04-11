@@ -18,9 +18,24 @@ Modal.setAppElement('#root')
 const AppointmentForm = ({ modalIsOpen, closeModal, appointmentOn, date }) => {
 
     const { register, handleSubmit, errors } = useForm();
+
     const onSubmit = data => {
-        console.log(data)
-        closeModal()
+        data.appointmentOn = appointmentOn;
+        data.appointmentDate = date;
+        data.appointmentCreated = new Date();
+        fetch('http://localhost:8080/addAppointment',{
+            method: "POST",
+            headers: {"content-type": "application/json"},
+            body: JSON.stringify(data)
+        })
+        .then(res => res.json())
+        .then(success => {
+            if(success) {
+                closeModal()
+                alert('Appointment created successfully')
+            }
+        })
+        
     };
     return (
         <div>
