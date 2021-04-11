@@ -2,6 +2,8 @@ import React, { createContext, useState } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Appointment from './components/Appointment/Appointment/Appointment';
 import Home from './components/Home/Home/Home';
+import Login from './components/Login/Login/Login';
+import PrivateRoute from './components/Login/PrivateRoute/PrivateRoute.js'
 
 export const UserContext = createContext()
 
@@ -14,8 +16,11 @@ const App = () => {
           <Route path="/" exact>
             <Home />
           </Route>
-          <Route path="/appointment">
+          <PrivateRoute path="/appointment">
             <Appointment />
+          </PrivateRoute>
+          <Route path="/login">
+            <Login />
           </Route>
         </Switch>
       </BrowserRouter>

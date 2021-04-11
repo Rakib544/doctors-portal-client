@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
-import * as firebase from "firebase/app";
+import firebase from "firebase/app";
 import "firebase/auth";
 import { useHistory, useLocation } from 'react-router-dom';
 import { UserContext } from '../../../App';
-import { firebaseConfig } from './firebase.config';
 import loginBg from '../../../images/Group 140.png';
+import { firebaseConfig } from './Firebase.config';
 
 const Login = () => {
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
@@ -12,7 +12,7 @@ const Login = () => {
   const location = useLocation();
   const { from } = location.state || { from: { pathname: "/" } };
 
-  if (firebase.apps.length === 0) {
+  if (!firebase.apps.length) {
     firebase.initializeApp(firebaseConfig);
   }
 
