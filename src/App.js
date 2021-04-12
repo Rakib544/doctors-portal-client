@@ -1,6 +1,7 @@
 import React, { createContext, useState } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Appointment from './components/Appointment/Appointment/Appointment';
+import Dashboard from './components/Dashboard/DashBoard/Dashboard';
 import Home from './components/Home/Home/Home';
 import Login from './components/Login/Login/Login';
 import PrivateRoute from './components/Login/PrivateRoute/PrivateRoute.js'
@@ -21,6 +22,9 @@ const App = () => {
           </PrivateRoute>
           <Route path="/login">
             <Login />
+          </Route>
+          <Route path="/dashboard">
+            <Dashboard />
           </Route>
         </Switch>
       </BrowserRouter>

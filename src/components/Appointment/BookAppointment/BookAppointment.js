@@ -43,7 +43,7 @@ const bookingData = [
 const BookAppointment = ({ date }) => {
     return (
         <div>
-            <h1 className="text-center text-brand">Available Appointment on {date.toDateString()}</h1>
+            <h1 className="text-center text-brand">Available Appointment on {new Date(date).toDateString()}</h1>
             <div className="container mt-3">
                 <div className="row">
                     {

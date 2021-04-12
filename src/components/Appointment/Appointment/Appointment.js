@@ -5,9 +5,9 @@ import AppointmentHeader from '../AppointmentHeader/AppointmentHeader';
 import BookAppointment from '../BookAppointment/BookAppointment';
 
 const Appointment = () => {
-    const [selectedDate, setSelectedDate] = useState(new Date())
+    const [selectedDate, setSelectedDate] = useState(new Date().toDateString())
     const handleDateChange = date => {
-        setSelectedDate(date)
+        setSelectedDate(new Date(date).toDateString())
     }
     return (
         <div>

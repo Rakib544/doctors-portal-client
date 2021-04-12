@@ -47,7 +47,7 @@ const AppointmentForm = ({ modalIsOpen, closeModal, appointmentOn, date }) => {
             >
 
                 <h2 className="text-center text-brand">{appointmentOn}</h2>
-                <h6 className="text-center">{date.toDateString()}</h6>
+                <h6 className="text-center">{new Date(date).toDateString()}</h6>
                 <form onSubmit={handleSubmit(onSubmit)} className="p-3">
                     <div className="form-group my-3">
                         <input name="name" placeholder="Enter Name" className="form-control" ref={register({ required: true })} />
